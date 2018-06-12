@@ -1,0 +1,17 @@
+(jbuild_version 1)
+
+(library
+ ((name parpair)
+  (public_name parpair)
+  (modules (parpair))
+  (libraries (unix))))
+
+(executables
+ ((names (test))
+  (modules (test))
+  (libraries (parpair))))
+
+(alias
+  ((name runtest)
+   (deps (test.exe))
+   (action (run ${<}))))
